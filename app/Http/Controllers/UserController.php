@@ -8,10 +8,10 @@ use Illuminate\Support\Facades\Hash;
 
 class UserController extends Controller
 {
-    // Lista todos os usuários (do mais antigo para o mais novo)
+    // Lista todos os usuários
     public function index()
     {
-        $users = User::orderBy('created_at')->orderBy('name')->get();
+        $users = User::orderBy('name')->get();
 
         return view('users.index', compact('users'));
     }
